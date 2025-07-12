@@ -1,4 +1,4 @@
-# HBM's Nuclear Tech Mod + JameH2 Space for Minecraft 1.7.10
+# HBM's Nuclear Tech Mod + JameH2 Space + Killer shit 'n giggles for Minecraft 1.7.10
 
 Hi, i am memeing things into existence, dont mind me! im just the bent fork at the end of the table -JamesH_2
 
