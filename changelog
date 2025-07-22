@@ -1,0 +1,18 @@
+Includes all changes and bugfixes from the latest upstream NTMain update - [X5397 - i need you, i need you, i need you, but i wish you were dead](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/releases/tag/1.0.27_X5397)
+
+## Added
+* Celestial Orrery
+    * Shows the current position of all celestial bodies as a hologram
+* Occasionally Heavy Boots
+    * Temporarily increases gravity on low gravity worlds when holding crouch
+* More `en_AU` translations
+* Space specific recipes to the new assembler (let us know if we missed any!)
+
+## Changed
+* DNT flight boost now activated by holding sprint key
+* Day and Night crafting requirement adjusted
+    * whatever that means
+
+## Fixed
+* Flying Laythe squids
+* Missing tank textures for aqueous nickel/copper, and brine
