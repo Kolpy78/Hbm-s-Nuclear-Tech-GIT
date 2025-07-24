@@ -199,6 +199,7 @@ public class ClientProxy extends ServerProxy {
 
 	@Override
 	public void registerTileEntitySpecialRenderer() {
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityMachineWindTurbine.class, new RenderWindTurbine());
 		//test crap
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityObjTester.class, new RendererObjTester());
 		//deco

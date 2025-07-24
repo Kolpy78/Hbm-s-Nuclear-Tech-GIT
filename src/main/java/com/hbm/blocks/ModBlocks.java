@@ -22,6 +22,7 @@ import com.hbm.lib.ModDamageSource;
 import com.hbm.lib.RefStrings;
 import com.hbm.main.MainRegistry;
 import com.hbm.tileentity.DoorDecl;
+import com.hbm.tileentity.machine.TileEntityMachineWindTurbine;
 import com.hbm.tileentity.machine.storage.TileEntityFileCabinet;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -764,6 +765,9 @@ public class ModBlocks {
 	public static Block foundry_slagtap;
 	public static Block slag;
 
+	//Kork machines
+	public static Block machine_wind;
+
 	public static Block machine_difurnace_off;
 	public static Block machine_difurnace_on;
 	public static Block machine_difurnace_extension;
@@ -1408,6 +1412,8 @@ public class ModBlocks {
 	public static Material materialGas = new MaterialGas();
 
 	private static void initializeBlock() {
+		//kork
+		machine_wind = new MachineWind(Material.iron).setBlockName("machine_wind").setCreativeTab(MainRegistry.machineTab).setHardness(1F).setResistance(1F).setBlockTextureName(RefStrings.MODID + ":block_steel_machine");
 
 		event_tester = new TestEventTester(Material.iron).setBlockName("event_tester").setCreativeTab(null).setHardness(2.5F).setResistance(0.0F).setBlockTextureName(RefStrings.MODID + ":event_tester");
 		obj_tester = new TestObjTester(Material.iron).setBlockName("obj_tester").setCreativeTab(null).setHardness(2.5F).setResistance(10.0F);
@@ -2728,7 +2734,8 @@ public class ModBlocks {
 		GameRegistry.registerBlock(test_core, test_core.getUnlocalizedName());
 		GameRegistry.registerBlock(test_charge, test_charge.getUnlocalizedName());
 		GameRegistry.registerBlock(structure_anchor, structure_anchor.getUnlocalizedName());
-
+		//Kork and stuff
+		register(machine_wind);
 		// Vanilla ores (for other planets)
 		GameRegistry.registerBlock(ore_iron, ItemBlockBase.class, ore_iron.getUnlocalizedName());
 		GameRegistry.registerBlock(ore_gold, ItemBlockBase.class, ore_gold.getUnlocalizedName());
