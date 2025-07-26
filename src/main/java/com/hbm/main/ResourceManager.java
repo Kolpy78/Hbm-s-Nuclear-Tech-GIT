@@ -19,9 +19,7 @@ public class ResourceManager {
 	////Obj TEs
 	//Kork machines
 	public static final IModelCustom wind_turbine = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/machines/WindTurbine.obj"));
-	public static final ResourceLocation wind_turbine_body_txt = new ResourceLocation(RefStrings.MODID, "textures/models/machines/wind.png");
-	public static final ResourceLocation wind_turbine_generator_txt = new ResourceLocation(RefStrings.MODID, "textures/models/machines/wind_generator.png");
-	public static final ResourceLocation wind_turbine_blades_txt = new ResourceLocation(RefStrings.MODID, "textures/models/machines/wind_blades.png");
+	public static final ResourceLocation wind_turbine_txt = new ResourceLocation(RefStrings.MODID, "textures/models/machines/WindTurbine_txt.png");
 
 	//Turrets
 	public static final IModelCustom turret_chekhov = new HFRWavefrontObject(new ResourceLocation(RefStrings.MODID, "models/turrets/turret_chekhov.obj")).asVBO();
