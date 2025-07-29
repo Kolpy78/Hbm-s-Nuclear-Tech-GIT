@@ -14,7 +14,6 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class MachineWind extends BlockDummyable implements ILookOverlay {
 
@@ -24,7 +23,7 @@ public class MachineWind extends BlockDummyable implements ILookOverlay {
 
 	@Override
   	public int[] getDimensions() {
-		return new int[] {3, 0, 0, 0, 0, 0}; //The last number sets height, the others idk
+		return new int[] {28, 0, 0, 0, 0, 0}; //The last number sets height, the others idk
 	}
 
 	@Override
@@ -56,13 +55,26 @@ public class MachineWind extends BlockDummyable implements ILookOverlay {
 		if(!(te instanceof TileEntityMachineWindTurbine)) return;
 
 		List<String> text = new ArrayList();
-
-		if(pos[1] > 70) {
-			text.add("&[" + (BobMathUtil.getBlink() ? 0xff0000 : 0xffff00) + "&]! ! ! ALTITUDE ! ! !");
-		}
 		TileEntityMachineWindTurbine wind = (TileEntityMachineWindTurbine) te;
-		text.add(EnumChatFormatting.YELLOW + "Power " + EnumChatFormatting.RESET + String.format(Locale.US, "%,d", wind.getPower()) + " / " + String.format(Locale.US, "%,d", wind.getMaxPower()) + "HE");
-		ILookOverlay.printGeneric(event, I18nUtil.resolveKey(getUnlocalizedName() + ".name"), 0xffff00, 0x404000, text);
+		switch (wind.isAbleToProvidePower()){
+			case VACUUM: {
+				text.add("&[" + (BobMathUtil.getBlink() ? 0xff0000 : 0xffff00) + "&]! ! ! VACUUM ! ! !");
+				text.add(EnumChatFormatting.RED + "Inactive");
+				break;
+			}
+			case TOO_HIGH: {
+				text.add("&[" + (BobMathUtil.getBlink() ? 0xff0000 : 0xffff00) + "&]! ! ! ALTITUDE ! ! !");
+				text.add(EnumChatFormatting.RED + "Inactive");
+				break;
+			}
+			case SKY_BLOCKED: {
+				text.add("&[" + (BobMathUtil.getBlink() ? 0xff0000 : 0xffff00) + "&]! ! ! TURBINE BLOCKED ! ! !");
+				text.add(EnumChatFormatting.RED + "Inactive");
+				break;
+			}
+			default: text.add(EnumChatFormatting.GREEN + "Active");
 
+		}
+		ILookOverlay.printGeneric(event, I18nUtil.resolveKey(getUnlocalizedName() + ".name"), 0xffff00, 0x404000, text);
 	}
 }
